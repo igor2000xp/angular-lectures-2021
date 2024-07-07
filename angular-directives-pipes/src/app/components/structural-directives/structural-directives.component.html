@@ -29,12 +29,12 @@
 <!--      <h4>Conditional Content ng-container to avoid extra div</h4>-->
 <!--      <p>This content is conditionally displayed based on the value of isVisible.</p>-->
 <!--    </ng-container>-->
-    <ng-container *ngIf="isVisible; else elseBlock">
+    <ng-template [ngIf]="isVisible" [ngIfElse]="elseBlock">
       <div>
         <h2>Visible Content</h2>
         <p>This content is shown when isVisible is true.</p>
       </div>
-    </ng-container>
+    </ng-template>
 
     <ng-template #elseBlock>
       <div>
@@ -42,6 +42,19 @@
         <p>This content is shown when isVisible is false.</p>
       </div>
     </ng-template>
+
+
+<!--    <ng-container *ngIf="isVisible; else elseBlock">-->
+<!--        <h2>Visible Content</h2>-->
+<!--        <p>This content is shown when isVisible is true.</p>-->
+<!--    </ng-container>-->
+
+<!--    <ng-template #elseBlock>-->
+<!--      <div>-->
+<!--        <h2>Hidden Content</h2>-->
+<!--        <p>This content is shown when isVisible is false.</p>-->
+<!--      </div>-->
+<!--    </ng-template>-->
   </mat-card-content>
 </mat-card>
 
