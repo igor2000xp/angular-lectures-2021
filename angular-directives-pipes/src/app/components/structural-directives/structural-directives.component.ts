@@ -14,6 +14,7 @@ enum Emotion {
 })
 export class StructuralDirectivesComponent {
   public emotion = Emotion;
+  public isVisible = true;
   public currentEmotion = Emotion.Happy;
   public posts = [
     {
@@ -38,6 +39,10 @@ export class StructuralDirectivesComponent {
       isLiked: false
     }
   ];
+
+  toggleVisibility() {
+    this.isVisible = !this.isVisible;
+  }
 
   likePost(targetPost) {
     const postIdx = this.posts.findIndex((post) => post.id === targetPost.id);
