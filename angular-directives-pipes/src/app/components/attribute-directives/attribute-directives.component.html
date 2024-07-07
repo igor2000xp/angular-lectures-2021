@@ -46,8 +46,8 @@
   <mat-card appHighlight>Highlight</mat-card>
   <mat-card appHighlightOnHover>Highlight On Hover</mat-card>
 
-  <mat-card appHighlightWithCustomColor [color]="color">Enter a color Highlight With Custom Color (separate properties)</mat-card>
   <mat-card [appHighlightCustomColorBinding] = "color" >Enter a color Highlight With Custom Color (binding properties)</mat-card>
+  <mat-card appHighlightWithCustomColor [color]="color">Enter a color Highlight With Custom Color (separate properties)</mat-card>
 
   <mat-form-field>
     <input matInput [(ngModel)]="color" placeholder="Enter a color">
