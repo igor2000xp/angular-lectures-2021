@@ -16,19 +16,32 @@
   <mat-card-content>
     <button (click)="toggleVisibility()">Toggle Content</button>
 
-    <ng-template [ngIf]="isVisible">
+<!--    <ng-template [ngIf]="isVisible">-->
+<!--      <div>-->
+<!--        <h4>Conditional Content ng-template</h4>-->
+<!--        <p>This content is conditionally displayed based on the value of isVisible.</p>-->
+<!--      </div>-->
+<!--    </ng-template>-->
+
+<!--    &lt;!&ndash; Alternative using ng-container to avoid extra <div> &ndash;&gt;-->
+
+<!--    <ng-container *ngIf="isVisible">-->
+<!--      <h4>Conditional Content ng-container to avoid extra div</h4>-->
+<!--      <p>This content is conditionally displayed based on the value of isVisible.</p>-->
+<!--    </ng-container>-->
+    <ng-container *ngIf="isVisible; else elseBlock">
       <div>
-        <h4>Conditional Content ng-template</h4>
-        <p>This content is conditionally displayed based on the value of isVisible.</p>
+        <h2>Visible Content</h2>
+        <p>This content is shown when isVisible is true.</p>
+      </div>
+    </ng-container>
+
+    <ng-template #elseBlock>
+      <div>
+        <h2>Hidden Content</h2>
+        <p>This content is shown when isVisible is false.</p>
       </div>
     </ng-template>
-
-    <!-- Alternative using ng-container to avoid extra <div> -->
-
-    <ng-container *ngIf="isVisible">
-      <h4>Conditional Content ng-container to avoid extra div</h4>
-      <p>This content is conditionally displayed based on the value of isVisible.</p>
-    </ng-container>
   </mat-card-content>
 </mat-card>
 
