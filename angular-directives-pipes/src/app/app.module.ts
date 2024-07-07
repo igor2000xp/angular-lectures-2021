@@ -1,7 +1,8 @@
 import { IsDonePurePipe } from './components/pipes-examples/pipes/is-done-pure.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatCardModule, MatInputModule, MatButtonModule, MatIconModule, MatCheckboxModule } from '@angular/material';
+import { MatCardModule, MatInputModule, MatButtonModule, MatIconModule } from '@angular/material';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

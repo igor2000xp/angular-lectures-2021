@@ -5,7 +5,10 @@ import { Directive, ElementRef, Renderer2, HostListener, HostBinding } from '@an
 })
 export class HighlightOnHoverDirective {
   @HostBinding('attr.aria-label') public label = 'This is an aria-label';
-
+  // @HostBinding('class') readonly classes = "one two three";
+  // @HostBinding('style') readonly staticField2 = "display: inline-block;";
+  // @HostBinding('class.some-class') someField = true;
+  // @HostBinding('style.position') position = "absolute";
   constructor(private elementRef: ElementRef, private renderer2: Renderer2) { }
 
   @HostListener('mouseenter', ['$event'])
