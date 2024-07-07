@@ -41,11 +41,24 @@
   </mat-card-content>
 </mat-card>
 
-<mat-card>
+<h2>Cusom attribute directives</h2>
+
+  <mat-card appHighlight>Highlight</mat-card>
+  <mat-card appHighlightOnHover>Highlight On Hover</mat-card>
+
+  <mat-card appHighlightWithCustomColor [color]="color">Enter a color Highlight With Custom Color (separate properties)</mat-card>
+  <mat-card [appHighlightCustomColorBinding] = "color" >Enter a color Highlight With Custom Color (binding properties)</mat-card>
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="color" placeholder="Enter a color">
+  </mat-form-field>
+
   <mat-card-title>[ngNonBindable]</mat-card-title>
-  <mat-card-content>
-    <p ngNonBindable>
-      This text has no {{ interpolation }}
-    </p>
-  </mat-card-content>
+
+  <mat-card>
+    <mat-card-content>
+      <p ngNonBindable>
+        This text has no {{ interpolation }}
+      </p>
+    </mat-card-content>
 </mat-card>
