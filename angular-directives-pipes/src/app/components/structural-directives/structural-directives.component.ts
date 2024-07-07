@@ -13,6 +13,7 @@ enum Emotion {
   styleUrls: ['./structural-directives.component.scss']
 })
 export class StructuralDirectivesComponent {
+  public currentTemplate = 'template1';
   public emotion = Emotion;
   public isVisible = true;
   public currentEmotion = Emotion.Happy;
@@ -54,5 +55,9 @@ export class StructuralDirectivesComponent {
     const postIdx = this.posts.findIndex((post) => post.id === targetPost.id);
     this.posts[postIdx].isLiked = false;
     this.posts[postIdx].likes = this.posts[postIdx].likes - 1;
+  }
+
+  changeTemplate() {
+    this.currentTemplate = this.currentTemplate === 'template1' ? 'template2' : 'template1';
   }
 }

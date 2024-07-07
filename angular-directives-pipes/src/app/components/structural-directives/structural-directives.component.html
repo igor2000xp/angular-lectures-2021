@@ -11,10 +11,10 @@
 <!--    </mat-card-content>-->
 <!--  </mat-card>-->
 
-<mat-card>
-  <mat-card-title>*ngIf '< ng-template >'</mat-card-title>
-  <mat-card-content>
-    <button (click)="toggleVisibility()">Toggle Content</button>
+  <mat-card>
+    <mat-card-title>*ngIf '< ng-template >'</mat-card-title>
+    <mat-card-content>
+      <button (click)="toggleVisibility()">Toggle Content</button>
 
 <!--    <ng-template [ngIf]="isVisible">-->
 <!--      <div>-->
@@ -55,8 +55,32 @@
 <!--        <p>This content is shown when isVisible is false.</p>-->
 <!--      </div>-->
 <!--    </ng-template>-->
-  </mat-card-content>
-</mat-card>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title></mat-card-title>
+    <mat-card-content>
+      <button (click)="changeTemplate()">Toggle Template</button>
+
+      <ng-container [ngTemplateOutlet]="currentTemplate === 'template1' ? template1 : template2"></ng-container>
+
+      <ng-template #template1>
+        <div>
+          <h2>Template 1</h2>
+          <p>This is the first template.</p>
+        </div>
+      </ng-template>
+
+      <ng-template #template2>
+        <div>
+          <h2>Template 2</h2>
+          <p>This is the second template.</p>
+        </div>
+      </ng-template>
+    </mat-card-content>
+  </mat-card>
+
 
   <mat-card>
     <mat-card-title>*ngIf</mat-card-title>
